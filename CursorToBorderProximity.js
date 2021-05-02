@@ -35,7 +35,7 @@ export default class CursorToBorderProximity{
 
     $( this.element ).on('mousemove', this.handleElementMouseMove);
 
-    this.startListening();
+    this.listen();
 
   }
 
@@ -47,12 +47,12 @@ export default class CursorToBorderProximity{
   }
 
 
-  async startListening(){
+  async listen(){
 
     setTimeout(() => {
       this.callback(this.isInBorders());
       if(this.running){
-        this.startListening(this.callback, this.checkInterval);
+        this.listen(this.callback, this.checkInterval);
       }
     },this.checkInterval);
 
@@ -61,12 +61,19 @@ export default class CursorToBorderProximity{
   isInBorders(){
     if (!this.mousePosition[0] || !this.mousePosition[1]) return null;
 
+    let right = between(this.mousePosition[0],0 - 1, this.borderWidth);
+    let left = between(this.mousePosition[0], this.element.width() - this.borderWidth, this.element.width() + 1);
+    let top = between(this.mousePosition[1], 0 - 1, this.borderWidth);
+    let bottom = between(this.mousePosition[1], this.element.height() - this.borderWidth, this.element.height() + 1);
+
+    //if(!right && !left && !top && !bottom) return null;
+
     return {
-      left: between(this.mousePosition[0],0, this.borderWidth),
-      right: between(this.mousePosition[0], this.element.width(), this.element.width() - this.borderWidth),
-      top: between(this.mousePosition[1], 0, this.borderWidth),
-      bottom: between(this.mousePosition[1], this.element.height(), this.element.height() - this.borderWidth)
-    };
+      left: left,
+      right: right,
+      top: top,
+      bottom: bottomted
+    }
   }
 }
 
