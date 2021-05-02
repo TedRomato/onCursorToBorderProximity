@@ -61,8 +61,8 @@ export default class CursorToBorderProximity{
   isInBorders(){
     if (!this.mousePosition[0] || !this.mousePosition[1]) return null;
 
-    let right = between(this.mousePosition[0],0 - 1, this.borderWidth);
-    let left = between(this.mousePosition[0], this.element.width() - this.borderWidth, this.element.width() + 1);
+    let left = between(this.mousePosition[0],0 - 1, this.borderWidth);
+    let right = between(this.mousePosition[0], this.element.width() - this.borderWidth, this.element.width() + 1);
     let top = between(this.mousePosition[1], 0 - 1, this.borderWidth);
     let bottom = between(this.mousePosition[1], this.element.height() - this.borderWidth, this.element.height() + 1);
 
@@ -72,7 +72,7 @@ export default class CursorToBorderProximity{
       left: left,
       right: right,
       top: top,
-      bottom: bottomted
+      bottom: bottom
     }
   }
 }
