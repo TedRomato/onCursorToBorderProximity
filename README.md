@@ -17,11 +17,20 @@ object with right, left, top, bottom, boolean parameters. If cursor is outside e
 
 
 ```javascript
-import CursorToBorderProximity from "./CursorToBorderProximity.js"
+import CursorToBorderProximity from "../ExtendedControls/CursorToBorderProximity.js"
 
-let proximityTest = new CursorToBorderProximity( $("#Element") )
+let proximityTest = new CursorToBorderProximity( $("#Canvas") )
 
-proximityTest.onCursorToBorderProximity( (borderProximity) => {
+
+proximityTest.onCursorToBorderProximity( (borderProximity) => {callback(borderProximity)});
+
+
+$("button").click( () => {
+  proximityTest.offCursorToBorderProximity();
+});
+
+
+function callback(borderProximity){
   if (!borderProximity) {
     console.log("outside");
     return;
@@ -38,9 +47,8 @@ proximityTest.onCursorToBorderProximity( (borderProximity) => {
   if(borderProximity.bottom){
     console.log("bottom");
   }
-});
+}
 
-proximityTest.offCursorToBorderProximity();
 
 ```
 
