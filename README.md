@@ -19,12 +19,12 @@ object with right, left, top, bottom, boolean parameters. If cursor is outside e
 ```javascript
 import CursorToBorderProximity from "../ExtendedControls/CursorToBorderProximity.js"
 
-let proximityTest = new CursorToBorderProximity( $("#Canvas") )
+let proximityTest = new CursorToBorderProximity( $("#Element"), 25 /*border width*/, 50 /*interval lenght in milisec*/ )
 
-
+//start listening
 proximityTest.onCursorToBorderProximity( (borderProximity) => {callback(borderProximity)});
 
-
+//stop listening on button click
 $("button").click( () => {
   proximityTest.offCursorToBorderProximity();
 });
