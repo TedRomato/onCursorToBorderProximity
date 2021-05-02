@@ -52,7 +52,8 @@ function callback(borderProximity){
 
 ```
 
-![image](https://user-images.githubusercontent.com/59472129/116820094-7c4de300-ab73-11eb-93e5-563477bfcbc4.png)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/59472129/116822016-e8811480-ab7c-11eb-902b-c33b93a24e82.gif)
+
 
 
 
