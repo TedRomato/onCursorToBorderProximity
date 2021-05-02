@@ -17,7 +17,7 @@ object with right, left, top, bottom, boolean parameters. If cursor is outside e
 
 
 ```javascript
-import CursorToBorderProximity from "../ExtendedControls/CursorToBorderProximity.js"
+import CursorToBorderProximity from "./CursorToBorderProximity.js"
 
 let proximityTest = new CursorToBorderProximity( $("#Element"), 25 /*border width*/, 50 /*interval lenght in milisec*/ )
 
