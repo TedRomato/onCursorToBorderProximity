@@ -1,12 +1,12 @@
 # CursorToBorderProximity
 <h2>Usage:</h2>
-<p>Triggers a callback, when cursor is at distance from element borders.</p>
+<p>Periodically triggers a callback, that is fed information, about cursor being at distance from element borders.</p>
 <h2>How to use:</h2>
 <ol>
   <li>Import this file your js file</li>
   <li>Create CursorToBorderProximity instance</li>
   <li>Call onCursorToBorderProximity() on your instance, with callback as argument</li>
-  <li>Call onCursorToBorderProximity() on your instance to cancel</li>
+  <li>Call offCursorToBorderProximity() on your instance to cancel</li>
 </ol>
 
 <h3>Notes:</h3>
